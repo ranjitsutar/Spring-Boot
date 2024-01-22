@@ -9,7 +9,7 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
 	
-
+<!-- Constructor Injection -->
 
 	<!-- 
 	<bean class="com.ranjit.SpringCore.constructorInjection.Certificate" name="Certificate1">
@@ -33,7 +33,16 @@
  	c:personId="10"
  	c:certificate-ref="Certificate1"></bean>
  	 -->
-
-
-
+	<!-- Ambiguity Error -->
+	
+	<bean class="com.ranjit.SpringCore.constructorInjection.AmbiqutyErrorAdition" name="adition">
+		<constructor-arg value="12" type="int" index="1"/>
+		<constructor-arg value="18" type="int" index="0"/>
+	</bean>
+	
+	
+	
 	</beans>
+
+		
+	

@@ -14,6 +14,11 @@ public class Test {
 	System.out.println(t);
 	
 	
+	// Ambiguity Error
+	
+	AmbiqutyErrorAdition adition =(AmbiqutyErrorAdition) context.getBean("adition");
+	adition.sum();
+	
 	}
 	
 	
