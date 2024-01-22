@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean class="com.ranjit.SpringCore.collection.Employee" name="Emp1">
+	
+	<property name="emptId"  value="01"/>
+	<property name="empName" value="Ranjit"/>
+	<property name="empContactNumber">
+		<list>
+			<value>9740981232</value>
+			<value>7008551232</value>
+			<null/>
+		</list>
+	</property>
+	<property name="empAddress">
+		<set>
+		<value>Rourkela</value>
+		<value>Banglure</value>
+		</set>
+	</property>
+	
+	<property name="empDept">
+		<map>
+		<entry key="Mechanical" value="2"/>
+		<entry key="Electrical" value="1"/>
+		</map>
+	</property>
+	
+	<property name="properties">
+		<props>
+		<prop key="Ranit">RANJIT</prop>
+		<prop key="Sutar">SUTAR</prop>
+		</props>
+	
+	</property>
+	
+	</bean>
+	
+	</beans>
