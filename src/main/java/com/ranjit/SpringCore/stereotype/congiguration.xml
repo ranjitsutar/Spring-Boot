@@ -14,9 +14,12 @@
 
 	<context:component-scan
 		base-package="com.ranjit.SpringCore.stereotype"></context:component-scan>
-		
-		
-<bean class="com.ranjit.SpringCore.stereotype.Teacher" scope="prototype"/>
+
+
+	<!-- <bean class="com.ranjit.SpringCore.stereotype.Teacher" scope="prototype"/> -->
+	
+	
+	
 	<util:list list-class="java.util.LinkedList" id="frinds">
 		<value>Chandan</value>
 		<value>Sumit</value>
