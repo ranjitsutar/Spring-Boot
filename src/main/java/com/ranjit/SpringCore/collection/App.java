@@ -22,6 +22,8 @@ public class App
         System.out.println(employee1.getEmpDept());
         System.out.println(employee1.getEmpContactNumber()); 
         System.out.println(employee1.getProperties());
-
+        
+        
+        System.out.println(employee1.getEmpContactNumber().getClass().getName());
     }
 }
