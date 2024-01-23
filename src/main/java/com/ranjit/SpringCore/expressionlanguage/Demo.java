@@ -17,6 +17,8 @@ public class Demo {
 	private double z;
 	@Value("#{new java.lang.String('Ranjit')}")
 	private String s;
+	@Value("#{8>3}")
+	private boolean isActive;
 	
 	public int getX() {
 		return x;
@@ -38,9 +40,9 @@ public class Demo {
 	}
 	@Override
 	public String toString() {
-		return "Demo [x=" + x + ", y=" + y + ", e=" + e + ", z=" + z + ", s=" + s + "]";
+		return "Demo [x=" + x + ", y=" + y + ", e=" + e + ", z=" + z + ", s=" + s + ", isActive=" + isActive + "]";
 	}
-
+	
 
 	
 }
