@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <bean class="com.ranjit.SpringCore.autowire.Address" name="address"> 
+		<property name="street" value="d-456"/> <property name="city" value="Rourkela"/> 
+		</bean>
+		!<bean class="com.ranjit.SpringCore.autowire.Address" name="address1">
+	<property name="street" value="d-456"/>
+	<property name="city" value="Rourkela"/>
+	</bean>
+    name shold be same in class name 
+   <bean class="com.ranjit.SpringCore.autowire.Emp" 
+		name="emp1" autowire="byName"/> -->
+
+
+	<bean class="com.ranjit.SpringCore.autowire.Address"
+		name="address">
+		<property name="street" value="d-456" />
+		<property name="city" value="Rourkela" />
+	</bean>
+	<!--  
+	<bean class="com.ranjit.SpringCore.autowire.Address"
+		name="address2">
+		<property name="street" value="G-652" />
+		<property name="city" value="Rourkela" />
+	</bean>
+	-->
+	<!-- byType  -->
+	<!-- 
+	<bean class="com.ranjit.SpringCore.autowire.Emp" name="emp1"
+		autowire="byType" />
+-->
+	<!-- Constructor  -->
+		
+		<bean class="com.ranjit.SpringCore.autowire.Emp" name="emp1"
+		autowire="constructor" />
+
+
+
+</beans>
