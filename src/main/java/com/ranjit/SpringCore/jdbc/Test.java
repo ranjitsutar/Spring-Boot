@@ -23,7 +23,7 @@ public class Test {
 		 ApplicationContext context = new ClassPathXmlApplicationContext("com/ranjit/SpringCore/jdbc/congigurationjdbc.xml");
 		 StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 		 Student student1= new Student();
-		 
+		 //Insert Data
 //		 student1.setId(123);
 //		 student1.setName("CHandan Mohapatra");
 //		 student1.setCity("Bhubaneswar");
@@ -31,11 +31,20 @@ public class Test {
 //		 int insert = studentDao.insert(student1);
 //		 System.out.println(insert);
 		 
-		 student1.setId(456);
-		 student1.setName("Sumit");
-		 student1.setCity("jharsuguda");
-		 int change = studentDao.change(student1);
-		 System.out.println(change);
+		 
+		 // Update Data
+//		 student1.setId(456);
+//		 student1.setName("Sumit");
+//		 student1.setCity("jharsuguda");
+//		 int change = studentDao.change(student1);
+//		 System.out.println(change);
+		 
+		 //Delete Data
+		 
+		 int delete = studentDao.delete(123);
+		 System.out.println(delete);
+		 
+		 
 		 
 	}
 }
