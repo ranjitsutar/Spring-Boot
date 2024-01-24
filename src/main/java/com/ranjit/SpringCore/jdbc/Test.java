@@ -24,12 +24,18 @@ public class Test {
 		 StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 		 Student student1= new Student();
 		 
-		 student1.setId(123);
-		 student1.setName("CHandan Mohapatra");
-		 student1.setCity("Bhubaneswar");
+//		 student1.setId(123);
+//		 student1.setName("CHandan Mohapatra");
+//		 student1.setCity("Bhubaneswar");
+//		 
+//		 int insert = studentDao.insert(student1);
+//		 System.out.println(insert);
 		 
-		 int insert = studentDao.insert(student1);
-		 System.out.println(insert);
+		 student1.setId(456);
+		 student1.setName("Sumit");
+		 student1.setCity("jharsuguda");
+		 int change = studentDao.change(student1);
+		 System.out.println(change);
 		 
 	}
 }

@@ -6,6 +6,8 @@ import com.ranjit.SpringCore.jdbc.entity.Student;
 
 
 public class StudentDaoImp implements StudentDao {
+	
+	
 
 	private JdbcTemplate jdbcTemplate;
 	
@@ -14,10 +16,16 @@ public class StudentDaoImp implements StudentDao {
 	public int insert(Student student) {
 		
 		String query= "insert into student(id,name,city) values(?,?,?)";
-		int res = jdbcTemplate.update(query,student.getId(),student.getName(),student.getCity());
+		int res =this.jdbcTemplate.update(query,student.getId(),student.getName(),student.getCity());
 		return res;
 	}
-
+	@Override
+	public int change(Student student) {
+		String query = "update student set name=?, city=? where id=?";
+		int update = this.jdbcTemplate.update(query,student.getName(),student.getCity(),student.getId());
+		
+		return update;
+	}
 
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
@@ -27,6 +35,9 @@ public class StudentDaoImp implements StudentDao {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+
+
+
 	
 	
 
