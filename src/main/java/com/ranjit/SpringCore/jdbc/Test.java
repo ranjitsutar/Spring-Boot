@@ -3,11 +3,13 @@ package com.ranjit.SpringCore.jdbc;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
-
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.ranjit.SpringCore.jdbc.dao.JdbcConfiguration;
 import com.ranjit.SpringCore.jdbc.dao.StudentDao;
+import com.ranjit.SpringCore.jdbc.dao.StudentDaoImp;
 import com.ranjit.SpringCore.jdbc.entity.Student;
 
 public class Test {
@@ -22,8 +24,12 @@ public class Test {
 		 * bean.update(query,456,"ranjit Sutar","Rourkela"); System.out.println(result);
 		 */
 
-		 ApplicationContext context = new ClassPathXmlApplicationContext("com/ranjit/SpringCore/jdbc/congigurationjdbc.xml");
-		 StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
+//		 ApplicationContext context = new ClassPathXmlApplicationContext("com/ranjit/SpringCore/jdbc/congigurationjdbc.xml");
+	
+		// Annotation
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JdbcConfiguration.class);
+		
+		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 		 Student student1= new Student();
 		 //Insert Data
 //		 student1.setId(123);
@@ -56,5 +62,8 @@ public class Test {
 		 
 		List<Student> allStudent = studentDao.getAllStudent();
 		System.out.println(allStudent);
+	
+		
+	
 	}
 }
