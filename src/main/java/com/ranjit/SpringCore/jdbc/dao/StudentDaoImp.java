@@ -1,6 +1,9 @@
 package com.ranjit.SpringCore.jdbc.dao;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.ranjit.SpringCore.jdbc.entity.Student;
 
@@ -32,6 +35,22 @@ public class StudentDaoImp implements StudentDao {
 		int update = jdbcTemplate.update(query, id);
 		return update;
 	}
+	@Override
+	public Student getSingleStudent(int id) {
+		String query= "select * from student where id=?";
+		RowMapper rowMapper = new RowMapperImp();
+		Student student=this.jdbcTemplate.queryForObject(query, rowMapper,id);
+		return student;
+	}
+	@Override
+	public List<Student> getAllStudent() {
+		String query= "select * from student";
+		List<Student> listStudent = this.jdbcTemplate.query(query, new RowMapperImp() );
+		
+		return listStudent;
+	}
+
+
 
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
@@ -41,8 +60,6 @@ public class StudentDaoImp implements StudentDao {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-
-
 
 	
 	

@@ -1,5 +1,7 @@
 package com.ranjit.SpringCore.jdbc;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -40,11 +42,19 @@ public class Test {
 //		 System.out.println(change);
 		 
 		 //Delete Data
+//		 
+//		 int delete = studentDao.delete(123);
+//		 System.out.println(delete);
 		 
-		 int delete = studentDao.delete(123);
-		 System.out.println(delete);
+		 
+		 //singale data retrive
+//		 Student student = studentDao.getSingleStudent(456);
+//		 System.out.println(student);
 		 
 		 
+		 //get all student data
 		 
+		List<Student> allStudent = studentDao.getAllStudent();
+		System.out.println(allStudent);
 	}
 }
